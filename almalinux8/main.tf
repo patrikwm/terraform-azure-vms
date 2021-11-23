@@ -151,7 +151,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
     location              = var.location
     resource_group_name   = azurerm_resource_group.ResourceGroup.name
     network_interface_ids = [azurerm_network_interface.nic.id]
-    size                  = "Standard_DS1_v2"
+    size                  = "Standard_D2s_v3"
 
     os_disk {
         name              = "myOsDisk"
@@ -159,11 +159,24 @@ resource "azurerm_linux_virtual_machine" "vm" {
         storage_account_type = "Premium_LRS"
     }
 
+    plan {
+        publisher = "${var.vm_publisher}"
+        name        = "${var.vm_sku}"
+        product     = "${var.vm_offer}"
+                # "name": "8_5",
+                # "publisher": "almalinux",
+                # "product": "almalinux"
+    }
+
     source_image_reference {
         publisher = "${var.vm_publisher}"
         offer     = "${var.vm_offer}"
         sku       = "${var.vm_sku}"
         version   = "${var.vm_version}"
+                # "publisher": "almalinux",
+                # "offer": "almalinux",
+                # "sku": "8_5",
+                # "version": "latest"
     }
 
 
