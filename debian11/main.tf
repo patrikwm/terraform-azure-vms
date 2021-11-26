@@ -135,16 +135,6 @@ resource "azurerm_storage_account" "StorageAccount" {
     }
 }
 
-# Create (and display) an SSH key
-# resource "tls_private_key" "example_ssh" {
-#   algorithm = "RSA"
-#   rsa_bits = 4096
-# }
-# output "tls_private_key" {
-#     value = tls_private_key.example_ssh.private_key_pem
-#     sensitive = true
-# }
-
 # Create virtual machine
 resource "azurerm_linux_virtual_machine" "vm" {
     name                  = "${var.prefix}-VM"
@@ -165,7 +155,6 @@ resource "azurerm_linux_virtual_machine" "vm" {
         sku       = "${var.vm_sku}"
         version   = "${var.vm_version}"
     }
-
 
     computer_name  = "${var.prefix}"
     admin_username = "${var.vm_admin}"
