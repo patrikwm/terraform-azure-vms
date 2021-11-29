@@ -159,6 +159,16 @@ resource "azurerm_linux_virtual_machine" "vm" {
         storage_account_type = "Premium_LRS"
     }
 
+
+    plan {
+        publisher = "${var.vm_publisher}"
+        name        = "${var.vm_sku}"
+        product     = "${var.vm_offer}"
+                # "name": "rocky-linux-8-latest",
+                # "publisher": "procomputers",
+                # "product": "rocky-lnx-8-latest"
+    }
+                
     source_image_reference {
         publisher = "${var.vm_publisher}"
         offer     = "${var.vm_offer}"
