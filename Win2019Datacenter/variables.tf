@@ -6,3 +6,4 @@ variable "vm_publisher"           { default = "MicrosoftWindowsServer" }
 variable "vm_offer"               { default = "WindowsServer" }
 variable "vm_sku"                 { default = "2019-Datacenter" }
 variable "vm_version"             { default = "latest" }
+variable "vm_size"                { default = "Standard_DS2_v2" }
