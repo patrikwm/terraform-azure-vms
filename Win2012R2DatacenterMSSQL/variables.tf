@@ -1,0 +1,9 @@
+variable "location"               { default = "northeurope" }
+variable "prefix"                 { default = "windows2012r2" }
+variable "vm_admin"               { default = "azureuser" }
+variable "vm_password"            { default = "M3GaPASSWORD!" }
+variable "vm_publisher"           { default = "MicrosoftWindowsServer" }
+variable "vm_offer"               { default = "SQL2012SP4-WS2012R2" }
+variable "vm_sku"                 { default = "Express" }
+variable "vm_version"             { default = "latest" }
+variable "vm_size"                { default = "Standard_DS2_v2" }
